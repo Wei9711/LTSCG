@@ -1,7 +1,7 @@
 # LTS-CG: Inferring Latent Temporal Sparse  Cooperative Graph for Multi-Agent Reinforcement Learning
 
 This codebase is based on [PyMARL](https://github.com/oxwhirl/pymarl) and contains the implementation
-of the LTS-CG algorithm.
+of the [LTS-CG](https://arxiv.org/abs/2403.19253) algorithm.
 
 <figure>
   <img src="https://github.com/Wei9711/LTSCG/raw/main/LTSCG.svg" alt="LTSCG Framework SVG">
