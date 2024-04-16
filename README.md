@@ -3,6 +3,9 @@
 This codebase is based on [PyMARL](https://github.com/oxwhirl/pymarl) and contains the implementation
 of the LTS-CG algorithm.
 
+![LTSCG Framework PDF](https://github.com/Wei9711/LTSCG/raw/main/LTSCG-framework.pdf)
+
+
 ## Run an experiment 
 
 Tasks can be found in `src/envs`. 
