@@ -27,16 +27,32 @@ python src/main.py --config=ltscg_inf --env-config=sc2 with env_args.map_name='1
 
 The requirements.txt file can be used to install the necessary packages into a virtual environment.
 
-## Saving and loading learnt models
+## Baselines used in this paper
+- [**QMIX**: QMIX: Monotonic Value Function Factorisation for Deep Multi-Agent Reinforcement Learning](https://arxiv.org/abs/1803.11485)
+- [**DCG**: Deep Coordination Graphs](https://arxiv.org/abs/1910.00091)
+- [**DICG**: Deep Implicit Coordination Graphs for Multi-agent Reinforcement Learning](https://arxiv.org/abs/2006.11438) 
+- [**SOP-CG**: Self-Organized Polynomial-Time Coordination Graphs](https://arxiv.org/abs/2112.03547)
+- [**CASEC**: Context-Aware Sparse Deep Coordination Graphs](https://arxiv.org/abs/2106.02886)
 
-### Saving models
+## Citing LTS-CG 
 
-You can save the learnt models to disk by setting `save_model = True`, which is set to `False` by default. The frequency of saving models can be adjusted using `save_model_interval` configuration. Models will be saved in the result directory, under the folder named *models*. The directory corresponding to each run will contain models saved throughout the training process, each of which is named by the number of timesteps passed since the learning process starts.
+If you use LTS-CG in your research, please cite the [LTS-CG paper](https://arxiv.org/abs/2403.19253).
 
-### Loading models
+*Wei Duan, Jie Lu, Junyu Xuan. Inferring Latent Temporal Sparse Coordination Graph for Multi-Agent Reinforcement Learning. CoRR abs/2403.19253 (2024)*
 
-Learnt models can be loaded using the `checkpoint_path` parameter, after which the learning will proceed from the corresponding timestep. 
+In BibTeX format:
 
-## Watching StarCraft II replays
+```tex
+@article{DBLP:journals/corr/abs-2403-19253,
+  author       = {Wei Duan and
+                  Jie Lu and
+                  Junyu Xuan},
+  title        = {Inferring Latent Temporal Sparse Coordination Graph for Multi-Agent
+                  Reinforcement Learning},
+  journal      = {CoRR},
+  volume       = {abs/2403.19253},
+  year         = {2024}
+}
 
-`save_replay` option allows saving replays of models which are loaded using `checkpoint_path`. Once the model is successfully loaded, `test_nepisode` number of episodes are run on the test mode and a .SC2Replay file is saved in the Replay directory of StarCraft II. Please make sure to use the episode runner if you wish to save a replay, i.e., `runner=episode`. The name of the saved replay file starts with the given `env_args.save_replay_prefix` (map_name if empty), followed by the current timestamp. 
+```
+
