@@ -1,0 +1,35 @@
+action_selector: "socg"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+graph_epsilon: 0.00
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# use the Q_Learner to train
+agent_output_type: "q"
+runner: "cg_episode"
+mac: "sopcg_mac"
+learner: "sopcg_learner"
+agent: "rnn_cg"
+double_q: True
+double_q_on_graph: True
+construction: 'tree'
+privileged_bias: False
+state_embed_dim: 32
+
+single_q_hidden_dim: []
+pairwise_q_hidden_dim: [64]
+individual_q: True
+
+name: "sopcg"
+
+
+action_encoder: "obs_reward"
+use_action_repr: True
+action_latent_dim: 20
+state_latent_dim: 32
+action_repr_learning_phase: 40000

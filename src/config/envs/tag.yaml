@@ -1,0 +1,19 @@
+env: tag
+
+env_args:
+  n_good_agents: 3
+  n_adversaries: 10
+  n_landmarks: 3
+  episode_limit: 50
+  reward_scale: 0.1
+  object_scale: 0.8
+  obs_range: 0.5
+  benchmark: False
+
+learner_log_interval: 10000
+log_interval: 10000
+runner_log_interval: 10000
+t_max: 5005000
+test_interval: 10000
+test_nepisode: 300
+test_greedy: True

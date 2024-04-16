@@ -1,0 +1,54 @@
+# --- DICG specific parameters ---
+name: "dicg"
+
+# use epsilon greedy action selector
+action_selector: "epsilon_greedy"
+epsilon_start: 1.0
+epsilon_finish: 0.05
+epsilon_anneal_time: 50000
+
+runner: "episode"
+
+buffer_size: 5000
+
+# update the target network every {} episodes
+target_update_interval: 200
+
+# DICG graph
+dicg_emb_hid: 128
+concate_mlp_dim: 10
+gcn_message_dim: 10
+number_gcn_layers: 2
+concate_gcn: True
+concate_mlp: True
+graph_loss_weight: 1
+
+# use the Q_Learner to train / QMIX as baseline
+agent_output_type: "q"
+learner: "LTSCG_infer_learner"
+mac: "Ltscg_mac"    
+double_q: True
+mixer: "qmix"
+mixing_embed_dim: 32
+hypernet_layers: 2
+hypernet_embed: 64
+
+train_graph: True
+graph_emb_hid: 128
+mlp_emb_hid: 64
+mlp_out: 32
+# GTS_model
+gtsmodel:
+  cl_decay_steps: 2000
+  filter_type: dual_random_walk
+  horizon: 12
+  input_dim: 2
+  l1_decay: 0
+  max_diffusion_step: 3
+  num_nodes: 207
+  num_rnn_layers: 1
+  output_dim: 1
+  rnn_units: 64
+  seq_len: 12
+  use_curriculum_learning: true
+  dim_fc: 383552
